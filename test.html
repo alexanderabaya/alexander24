@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- Somehow I got an error, so I comment the title, just uncomment to show -->
+    <!-- <title>Password Strength Indicator | CodingNepal</title> -->
+    <link rel="stylesheet" href="css.css">
+  </head>
+  <body>
+
+      <header>Password Strength Indicator <br>in HTML CSS & JavaScript</header>
+      <form action="#">
+        <div class="field">
+          <label >Password</label><br>
+            <input class="txt-box" onkeyup="trigger()" type="password" name="pass" placeholder="Password" id="password1">
+          <span class="showBtn">SHOW</span>
+        </div>
+<div class="indicator">
+          <span class="weak"></span>
+          <span class="medium"></span>
+          <span class="strong"></span>
+        </div>
+<div class="text">
+</div>
+</form>
+
+<script>
+      const indicator = document.querySelector(".indicator");
+      const input = document.getElementById("password1");
+      const weak = document.querySelector(".weak");
+      const medium = document.querySelector(".medium");
+      const strong = document.querySelector(".strong");
+      const text = document.querySelector(".text");
+      const showBtn = document.querySelector(".showBtn");
+      let regExpWeak = /[a-z]/;
+      let regExpMedium = /\d+/;
+      let regExpStrong = /.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/;
+      function trigger(){
+        if(input.value != ""){
+
+          showBtn.style.display = "block";
+          showBtn.onclick = function(){
+            if(input.type == "password"){
+              input.type = "text";
+              showBtn.textContent = "HIDE";
+              showBtn.style.color = "#23ad5c";
+            }else{
+              input.type = "password";
+              showBtn.textContent = "SHOW";
+              showBtn.style.color = "#000";
+            }
+          }
+        }else{
+          showBtn.style.display = "none";
+        }
+      }
+    </script>
+
+  </body>
+</html>
+
+
+<div class="update-form">
+  <form action="Includes/signup.inc.php" method="post">
+      <input type="text" name="Fname" placeholder="Firstname" value="Alexander Dale">
+      <input type="text"  name="Lname" placeholder="Lastname" value="Abaya" >
+      <br>
+      <input type="number" name="Age" placeholder="Age" placeholder="19" >
+      <br>
+      <label>Birthday:2012</label>
+      <input type="date" name="Birthday" placeholder="Birthday">
+      <br>
+      <label>Gender: Male</label>
+      <br>
+      <input type="radio" name="Gender" value="Male" ><label>Male</label>
+      <br>
+      <input type="radio"   name="Gender" value="Female" ><label>Female</label>
+      <br>
+      <input type="radio"   name="Gender" value="Prefer not to say"><label>Prefer not to say</label>
+      <br>
+      <input type="text"   name="Address" placeholder="Address" value="Blk 08, Lot 22, Northcrest Village, Bagumbong" >
+      <br>
+      <input type="text"   name="City" placeholder="Address" value="Caloocan City" >
+      <br>
+      <input type="text"  name="Zip" placeholder="Zip Code" value="1400" >
+      <br>
+      <input type="text"  name="Email" placeholder="Email" value="alexander.dale.abaya@gmail.com" >
+      <br>
+      <input type="number"  name="Contact" placeholder="Mobile No." value="09123123123" >
+      <br>
+      <input type="text"  name="uname" placeholder="Username" value="alexander24" >
+      <br>
+      <input type="password"  name="pass" placeholder="Password" >
+      <br>
+      <input type="password"  name="confirmpass" placeholder="Confirm Password">
+      <br>
+      <button type="submit" name="submit">Save</button>
+</form>
+  
+</div>
